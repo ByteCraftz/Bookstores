@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bookstore</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="logo">
+          <img src="logo.png" alt="BUNAFIT">
+          <p>Bookstore</p>
+        </div>
+        <div class="login-system">
+          <form action="/login" method="post">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username"><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password"><br>
+            <label for="hak-akses">Hak Akses:</label><br>
+            <select id="hak-akses" name="hak_akses">
+              <option value="admin">Admin</option>
+              <option value="customer">Customer</option>
+              <option value="employee">Employee</option>
+            </select><br>
+            <input type="submit" value="Login">
+          </form>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <h1>Selamat datang !</h1>
+        <p>Anda login sebagai Admin</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
