@@ -1,16 +1,18 @@
 # app/controllers/sessions_controller.rb
 class SessionsController < ApplicationController
+    # app/controllers/sessions_controller.rb
+class SessionsController < ApplicationController
     def login
       username = params[:username]
       password = params[:password]
       hak_akses = params[:hak_akses]
   
-      # Add your authentication logic here
-      # For example, you can check if the username and password are correct and match a user in your database
-      if authenticate(username, password, hak_akses)
-        # If the login is successful, set a session variable to indicate that the user is logged in
-        session[:user] = { username: username, hak_akses: hak_akses }
-        # Redirect the user to the index action of the HomeController
+      # Find the user with the given username
+      user = User.find_by(username: username)
+  
+      # If the user exists and the password is correct, set a session variable to indicate that the user is logged in
+      if user&.authenticate(password)
+        session[:user] = { username: user.username, hak_akses: user.hak_akses }
         redirect_to root_path
       else
         # If the login fails, display an error message
@@ -18,6 +20,7 @@ class SessionsController < ApplicationController
         render :index
       end
     end
+  end
   
     private
   
