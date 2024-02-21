@@ -1,37 +1,58 @@
+<!-- app/views/home/index.html.erb -->
 <!DOCTYPE html>
 <html>
 <head>
   <title>Bookstore</title>
+  <style>
+    /* Add your CSS styles here */
+    .menu {
+      display: none;
+    }
+    .menu.visible {
+      display: block;
+    }
+    .login-form {
+      margin: 0 auto;
+      width: 300px;
+      margin-top: 100px;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3">
-        <div class="logo">
-          <img src="logo.png" alt="BUNAFIT">
-          <p>Bookstore</p>
-        </div>
-        <div class="login-system">
-          <form action="/login" method="post">
-            <label for="username">Username:</label><br>
-            <input type="text" id="username" name="username"><br>
-            <label for="password">Password:</label><br>
-            <input type="password" id="password" name="password"><br>
-            <label for="hak-akses">Hak Akses:</label><br>
-            <select id="hak-akses" name="hak_akses">
-              <option value="admin">Admin</option>
-              <option value="customer">Customer</option>
-              <option value="employee">Employee</option>
-            </select><br>
-            <input type="submit" value="Login">
-          </form>
-        </div>
-      </div>
-      <div class="col-md-9">
-        <h1>Selamat datang !</h1>
-        <p>Anda login sebagai Admin</p>
-      </div>
-    </div>
+  <div class="login-form">
+    <h1>Login</h1>
+    <form action="/login" method="post">
+      <label for="username">Username:</label><br>
+      <input type="text" id="username" name="username"><br>
+      <label for="password">Password:</label><br>
+      <input type="password" id="password" name="password"><br>
+      <label for="hak-akses">Hak Akses:</label><br>
+      <select id="hak-akses" name="hak_akses">
+        <option value="admin">Admin</option>
+        <option value="customer">Customer</option>
+        <option value="employee">Employee</option>
+      </select><br>
+      <input type="submit" value="Login">
+    </form>
+  </div>
+  <div class="menu">
+    <h1>BUNAFIT</h1>
+    <ul>
+      <li><a href="#">• Home</a></li>
+      <li><a href="#">• Data User (Kasir)</a></li>
+      <li><a href="#">• Data Distributor</a></li>
+      <li><a href="#">• Data Penerbit</a></li>
+      <li><a href="#">• Data Kategori Buku</a></li>
+      <li><a href="#">• Data Jenis Buku</a></li>
+      <li><a href="#">• Data Buku</a></li>
+      <li><a href="#">• Pencarian Buku (1)</a></li>
+      <li><a href="#">• Pencarian Buku (2)</a></li>
+      <li><a href="#">• Kontrol Stok Buku</a></li>
+      <li><a href="#">• Transaksi Penerimaan</a></li>
+      <li><a href="#">• Transaksi Retur</a></li>
+      <li><a href="#">• Transaksi Pembayaran</a></li>
+      <li><a href="#">• Transaksi Penjualan</a></li>
+    </ul>
   </div>
 </body>
 </html>
